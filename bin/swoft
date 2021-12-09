@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+// Bootstrap
+use App\Application;
+
+require_once __DIR__ . '/bootstrap.php';
+
+Swoole\Coroutine::set([
+    'max_coroutine' => 300000,
+]);
+
+// Run application
+(new Application())->run();

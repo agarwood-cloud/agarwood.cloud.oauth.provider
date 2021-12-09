@@ -1,0 +1,21 @@
+.buildpath
+.settings/
+.project
+*.patch
+.idea/
+.git/
+runtime/
+vendor/
+*.lock
+!composer.lock
+.phpintel/
+.env
+.phpstorm.meta.php
+.DS_Store
+public/devtool/
+bin/php-cs-fixer
+app-private-key.pem
+app-public-key.key
+
+# 不加入重要的配置文件
+#config/pro/
