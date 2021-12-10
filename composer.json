@@ -1,9 +1,18 @@
 {
   "name": "agarwood/oauth",
   "type": "library",
-  "description": "agarwood-cloud Authorization for RBAC",
+  "description": "Each organization has its own private domain traffic",
   "license": "proprietary",
-  "homepage": "https://gitee.com/agilawood-cloud/agarwood.cloud.authorization.provider.git",
+  "keywords": [
+    "agarwood",
+    "agarwood-cloud",
+    "ddd",
+    "Domain-Driven Design",
+    "php",
+    "swoole",
+    "swoft"
+  ],
+  "homepage": "https://github.com/agarwood-cloud/agarwood.cloud.oauth.provider",
   "require": {
     "php": ">=8.0",
     "ext-json": "*",
