@@ -2,7 +2,7 @@
   "name": "agarwood/oauth",
   "type": "library",
   "description": "Each organization has its own private domain traffic",
-  "license": "proprietary",
+  "license": "Apache-2.0",
   "keywords": [
     "agarwood",
     "agarwood-cloud",

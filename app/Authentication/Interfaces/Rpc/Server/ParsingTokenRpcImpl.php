@@ -14,6 +14,7 @@ use Agarwood\Rpc\OauthCenter\OAuthCenterJWTRpcInterface;
 use App\Authentication\Domain\ConfigurationDomain;
 use App\Authentication\Domain\ParsingTokenDomain;
 use App\Authentication\Domain\ValidatingTokenDomain;
+use function context;
 
 /**
  * @\Swoft\Rpc\Server\Annotation\Mapping\Service()
@@ -44,12 +45,16 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     /**
      * 验证token是否可用
      *
-     * @param string $token
+     * @param string|null $token
      *
      * @return bool
      */
-    public function validator(string $token): bool
+    public function validator(?string $token): bool
     {
+        if (empty($token)) {
+            $token = context()->getRequest()->getHeaderLine('Authorization');
+        }
+
         $config = $this->configurationDomain->forSymmetricSigner();
 
         return $this->validatingTokenDomain->assert($config, $token);
@@ -58,60 +63,75 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     /**
      * 用户id 或者 粉丝openid
      *
-     * @param string $parse
+     * @param string|null $parse
      *
      * @return int|string|null
      */
-    public function getUserId(string $parse): int|string|null
+    public function getUserId(?string $parse): int|string|null
     {
+        if (empty($parse)) {
+            $parse = context()->getRequest()->getHeaderLine('Authorization');
+        }
         $config = $this->configurationDomain->forSymmetricSigner();
 
         return $this->parsingTokenDomain->getUserId($config, $parse);
     }
 
     /**
-     * @param string $parse
+     * @param string|null $parse
      *
      * @return string|null
      */
-    public function getCustomer(string $parse): string|null
+    public function getCustomer(?string $parse): string|null
     {
+        if (empty($parse)) {
+            $parse = context()->getRequest()->getHeaderLine('Authorization');
+        }
         $config = $this->configurationDomain->forSymmetricSigner();
 
         return $this->parsingTokenDomain->getCustomer($config, $parse);
     }
 
     /**
-     * @param string $parse
+     * @param string|null $parse
      *
      * @return int|null
      */
-    public function getCustomerId(string $parse): int|null
+    public function getCustomerId(?string $parse): int|null
     {
+        if (empty($parse)) {
+            $parse = context()->getRequest()->getHeaderLine('Authorization');
+        }
         $config = $this->configurationDomain->forSymmetricSigner();
 
         return $this->parsingTokenDomain->getCustomerId($config, $parse);
     }
 
     /**
-     * @param string $parse
+     * @param string|null $parse
      *
      * @return string|null
      */
-    public function getNickname(string $parse): string|null
+    public function getNickname(?string $parse): string|null
     {
+        if (empty($parse)) {
+            $parse = context()->getRequest()->getHeaderLine('Authorization');
+        }
         $config = $this->configurationDomain->forSymmetricSigner();
 
         return $this->parsingTokenDomain->getNickname($config, $parse);
     }
 
     /**
-     * @param string $parse
+     * @param string|null $parse
      *
      * @return int|null
      */
-    public function getOfficialAccountId(string $parse): int|null
+    public function getOfficialAccountId(?string $parse): int|null
     {
+        if (empty($parse)) {
+            $parse = context()->getRequest()->getHeaderLine('Authorization');
+        }
         $config = $this->configurationDomain->forSymmetricSigner();
 
         return $this->parsingTokenDomain->getOfficialAccountId($config, $parse);
