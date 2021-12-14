@@ -27,9 +27,9 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
      * @param \Lcobucci\JWT\Configuration $config
      * @param string                      $parse
      *
-     * @return int|string
+     * @return int|string|null
      */
-    public function getUserId(Configuration $config, string $parse): int|string
+    public function getUserId(Configuration $config, string $parse): int|string|null
     {
         $token = $config->parser()->parse($parse);
         assert($token instanceof UnencryptedToken);
@@ -40,9 +40,9 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
      * @param \Lcobucci\JWT\Configuration $config
      * @param string                      $parse
      *
-     * @return string
+     * @return string|null
      */
-    public function getCustomer(Configuration $config, string $parse): string
+    public function getCustomer(Configuration $config, string $parse): string|null
     {
         $token = $config->parser()->parse($parse);
         assert($token instanceof UnencryptedToken);
@@ -53,9 +53,9 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
      * @param \Lcobucci\JWT\Configuration $config
      * @param string                      $parse
      *
-     * @return int
+     * @return int|null
      */
-    public function getCustomerId(Configuration $config, string $parse): int
+    public function getCustomerId(Configuration $config, string $parse): int|null
     {
         $token = $config->parser()->parse($parse);
         assert($token instanceof UnencryptedToken);
@@ -66,9 +66,9 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
      * @param \Lcobucci\JWT\Configuration $config
      * @param string                      $parse
      *
-     * @return string
+     * @return string|null
      */
-    public function getNickname(Configuration $config, string $parse): string
+    public function getNickname(Configuration $config, string $parse): string|null
     {
         $token = $config->parser()->parse($parse);
         assert($token instanceof UnencryptedToken);
@@ -79,9 +79,9 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
      * @param \Lcobucci\JWT\Configuration $config
      * @param string                      $parse
      *
-     * @return int
+     * @return int|null
      */
-    public function getOfficialAccountId(Configuration $config, string $parse): int
+    public function getOfficialAccountId(Configuration $config, string $parse): int|null
     {
         $token = $config->parser()->parse($parse);
         assert($token instanceof UnencryptedToken);

@@ -52,7 +52,7 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     public function validator(?string $token): bool
     {
         if (empty($token)) {
-            $token = context()->getRequest()->getHeaderLine('Authorization');
+            $token = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));
         }
 
         $config = $this->configurationDomain->forSymmetricSigner();
@@ -70,7 +70,7 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     public function getUserId(?string $parse): int|string|null
     {
         if (empty($parse)) {
-            $parse = context()->getRequest()->getHeaderLine('Authorization');
+            $parse = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));
         }
         $config = $this->configurationDomain->forSymmetricSigner();
 
@@ -85,7 +85,7 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     public function getCustomer(?string $parse): string|null
     {
         if (empty($parse)) {
-            $parse = context()->getRequest()->getHeaderLine('Authorization');
+            $parse = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));
         }
         $config = $this->configurationDomain->forSymmetricSigner();
 
@@ -100,7 +100,7 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     public function getCustomerId(?string $parse): int|null
     {
         if (empty($parse)) {
-            $parse = context()->getRequest()->getHeaderLine('Authorization');
+            $parse = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));
         }
         $config = $this->configurationDomain->forSymmetricSigner();
 
@@ -115,7 +115,7 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     public function getNickname(?string $parse): string|null
     {
         if (empty($parse)) {
-            $parse = context()->getRequest()->getHeaderLine('Authorization');
+            $parse = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));
         }
         $config = $this->configurationDomain->forSymmetricSigner();
 
@@ -130,7 +130,7 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     public function getOfficialAccountId(?string $parse): int|null
     {
         if (empty($parse)) {
-            $parse = context()->getRequest()->getHeaderLine('Authorization');
+            $parse = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));
         }
         $config = $this->configurationDomain->forSymmetricSigner();
 
