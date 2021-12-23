@@ -28,7 +28,7 @@ use Lcobucci\JWT\Validation\Constraint\SignedWith;
 class ValidatingTokenDomainImpl implements ValidatingTokenDomain
 {
     /**
-     * 验证签名是否是正确的
+     * Validating tokens
      *
      * @param \Lcobucci\JWT\Configuration $config
      * @param string                      $parse
@@ -66,10 +66,7 @@ class ValidatingTokenDomainImpl implements ValidatingTokenDomain
 
         $constraints = $config->validationConstraints();
 
-        if (!$config->validator()->validate($token, ...$constraints)) {
-            throw new ForbiddenException('Token validation failed！');
-        }
-
-        return true;
+        // only one constraint is required to be valid
+        return $config->validator()->validate($token, ...$constraints);
     }
 }
