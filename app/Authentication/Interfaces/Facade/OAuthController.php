@@ -37,9 +37,9 @@ class OAuthController extends AbstractBaseController
     protected OAuthApplication $application;
 
     /**
-     * 用户登录
+     * User Login
      *
-     * @RequestMapping(route="user/login", method={ RequestMethod::POST })
+     * @RequestMapping(route="user-login", method={ RequestMethod::POST })
      * @Validate(validator=LoginDTO::class, type=ValidateType::BODY)
      * @param \Swoft\Http\Message\Request $request
      *
@@ -54,9 +54,9 @@ class OAuthController extends AbstractBaseController
     }
 
     /**
-     * 创建用户
+     * Create Admin User
      *
-     * @RequestMapping(route="user/signup", method={ RequestMethod::POST })
+     * @RequestMapping(route="user-signup", method={ RequestMethod::POST })
      * @Validate(validator=LoginDTO::class, type=ValidateType::BODY)
      * @param \Swoft\Http\Message\Request  $request
      * @param \Swoft\Http\Message\Response $response
@@ -72,9 +72,9 @@ class OAuthController extends AbstractBaseController
     }
 
     /**
-     * 退出登陆
+     * Logout
      *
-     * @RequestMapping(route="user/logout", method={ RequestMethod::POST })
+     * @RequestMapping(route="user-logout", method={ RequestMethod::POST })
      *
      * @return Response|null
      */
