@@ -27,7 +27,7 @@ class LoginDTO
     public string $username = '';
 
     /**
-     * 用户名
+     * 密码
      *
      * @\Swoft\Validator\Annotation\Mapping\Required()
      * @\Swoft\Validator\Annotation\Mapping\NotEmpty()
@@ -38,10 +38,8 @@ class LoginDTO
     public string $password = '';
 
     /**
-     * 用户名
+     * 版本号
      *
-     * @\Swoft\Validator\Annotation\Mapping\Required()
-     * @\Swoft\Validator\Annotation\Mapping\NotEmpty()
      * @\Swoft\Validator\Annotation\Mapping\IsString()
      *
      * @var string

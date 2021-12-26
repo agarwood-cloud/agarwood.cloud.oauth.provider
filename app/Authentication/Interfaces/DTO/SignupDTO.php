@@ -27,7 +27,7 @@ class SignupDTO
     public string $username = '';
 
     /**
-     * 用户名
+     * 密码
      *
      * @\Swoft\Validator\Annotation\Mapping\Required()
      * @\Swoft\Validator\Annotation\Mapping\NotEmpty()
