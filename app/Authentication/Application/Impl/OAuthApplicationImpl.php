@@ -19,6 +19,7 @@ use App\Authentication\Domain\UserDomain;
 use App\Authentication\Domain\ValidatingTokenDomain;
 use App\Authentication\Interfaces\DTO\LoginDTO;
 use App\Authentication\Interfaces\DTO\SignupDTO;
+use App\Authentication\Interfaces\Rpc\Client\CustomerRpcClient;
 
 /**
  * @\Swoft\Bean\Annotation\Mapping\Bean()
@@ -52,6 +53,13 @@ class OAuthApplicationImpl implements OAuthApplication
      * @var \App\Authentication\Domain\ValidatingTokenDomain
      */
     public ValidatingTokenDomain $validatingTokenDomain;
+
+    /**
+     * @\Swoft\Bean\Annotation\Mapping\Inject()
+     *
+     * @var \App\Authentication\Interfaces\Rpc\Client\CustomerRpcClient
+     */
+    public CustomerRpcClient $customerRpcClient;
 
     /**
      * 登陆
@@ -113,5 +121,37 @@ class OAuthApplicationImpl implements OAuthApplication
         }
 
         return $this->userDomain->signup($DTO->getUsername(), $DTO->getPassword());
+    }
+
+    /**
+     * @param \App\Authentication\Interfaces\DTO\SignupDTO $DTO
+     *
+     * @return array
+     */
+    public function customerSignupProvider(SignupDTO $DTO): array
+    {
+        // customer service info
+        $customer = $this->customerRpcClient->login($DTO->getUsername());
+
+        // 验证通过
+        if ($customer && password_verify($DTO->getPassword(), $customer['password'])) {
+
+            // 配置token
+            $config = $this->configurationDomain->forSymmetricSigner();
+
+            // 加入更多的参数
+            $this->issuingTokenDomain->setCustomer($customer['account']);
+            $this->issuingTokenDomain->setCustomerId($customer['id']);
+            $this->issuingTokenDomain->setOfficialAccountId($customer['oa_id']);
+
+            // 生成token
+            $build = $this->issuingTokenDomain->build($config, (string)$customer['id'], $customer['name']);
+
+            // 不显示在前端
+            unset($customer['password']);
+            return array_merge($customer, ['token' => $build->toString()]);
+        }
+        // jwt
+        throw new ForbiddenException('Account or password failed to be verified！');
     }
 }

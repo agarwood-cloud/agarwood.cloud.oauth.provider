@@ -84,4 +84,23 @@ class OAuthController extends AbstractBaseController
             'result' => $this->application->userLogoutProvider()
         ])->response();
     }
+
+    /**
+     * Customer Service Login
+     *
+     * @RequestMapping(route="customer-login", method={ RequestMethod::POST })
+     * @Validate(validator=LoginDTO::class, type=ValidateType::BODY)
+     * @param \Swoft\Http\Message\Request  $request
+     * @param \Swoft\Http\Message\Response $response
+     *
+     * @return Response|null
+     */
+    public function actionCustomerSignup(Request $request, Response $response): ?Response
+    {
+        $DTO = LoginAssembler::attributesToSignupDTO($request->getParsedBody());
+
+        return $this->wrapper()->setData([
+            'result' => $this->application->customerSignupProvider($DTO)
+        ])->response($response->withStatus(201));
+    }
 }

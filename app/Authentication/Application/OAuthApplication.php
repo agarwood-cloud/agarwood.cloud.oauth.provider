@@ -36,4 +36,11 @@ interface OAuthApplication
      * @return bool
      */
     public function userSignupProvider(SignupDTO $DTO): bool;
+
+    /**
+     * @param \App\Authentication\Interfaces\DTO\SignupDTO $DTO
+     *
+     * @return array
+     */
+    public function customerSignupProvider(SignupDTO $DTO): array;
 }

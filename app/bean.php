@@ -313,8 +313,8 @@ return [
     // +------------------------------------------------------
     'user.center'      => [
         'class'   => ServiceClient::class, // authorization
-        'host'    => env('RPC_CLIENT_AUTHORIZATION_CENTER_HOST', '127.0.0.1'),
-        'port'    => env('RPC_CLIENT_AUTHORIZATION_CENTER_PORT', 18307),
+        'host'    => env('RPC_CLIENT_USER_CENTER_HOST', '127.0.0.1'),
+        'port'    => env('RPC_CLIENT_USER_CENTER_PORT', 18307),
         'setting' => [
             'timeout'         => env('RPC_CLIENT_TIMEOUT', 0.5),
             'connect_timeout' => env('RPC_CLIENT_CONNECT_TIMEOUT', 1.0),
