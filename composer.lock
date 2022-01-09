@@ -79,7 +79,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:agarwood-cloud/agarwood.cloud.rpc.provider.git",
-                "reference": "47c132a377f0985116e8ccfb27da855490b508a9"
+                "reference": "273e2c1a78f648b6767e7498b0f26545ededc08f"
             },
             "require": {
                 "ext-json": "*",
@@ -134,7 +134,7 @@
             ],
             "description": "agarwood-cloud Rpc Package",
             "homepage": "https://github.com/agarwood-cloud/agarwood.cloud.rpc.provider.git",
-            "time": "2022-01-09T03:33:23+00:00"
+            "time": "2022-01-09T07:24:06+00:00"
         },
         {
             "name": "casbin/casbin",

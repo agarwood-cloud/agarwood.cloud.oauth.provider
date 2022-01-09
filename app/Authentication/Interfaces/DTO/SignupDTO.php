@@ -37,6 +37,14 @@ class SignupDTO
      */
     public string $password = '';
 
+
+    /**
+     * @\Swoft\Validator\Annotation\Mapping\IsInt()
+     *
+     * @var int
+     */
+    public int $officialAccountId = 0;
+
     /**
      * @return string
      */
@@ -67,5 +75,21 @@ class SignupDTO
     public function setPassword(string $password): void
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOfficialAccountId(): int
+    {
+        return $this->officialAccountId;
+    }
+
+    /**
+     * @param int $officialAccountId
+     */
+    public function setOfficialAccountId(int $officialAccountId): void
+    {
+        $this->officialAccountId = $officialAccountId;
     }
 }
