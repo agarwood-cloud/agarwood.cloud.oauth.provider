@@ -99,8 +99,8 @@ class OAuthController extends AbstractBaseController
     {
         $DTO = LoginAssembler::attributesToSignupDTO($request->getParsedBody());
 
-        return $this->wrapper()->setData([
-            'result' => $this->application->customerSignupProvider($DTO)
-        ])->response($response->withStatus(201));
+        return $this->wrapper()->setData(
+            $this->application->customerSignupProvider($DTO)
+        )->response($response->withStatus(201));
     }
 }

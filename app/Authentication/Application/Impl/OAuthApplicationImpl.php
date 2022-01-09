@@ -142,7 +142,7 @@ class OAuthApplicationImpl implements OAuthApplication
             // 加入更多的参数
             $this->issuingTokenDomain->setCustomer($customer['account']);
             $this->issuingTokenDomain->setCustomerId($customer['id']);
-            $this->issuingTokenDomain->setOfficialAccountId($customer['oa_id']);
+            $this->issuingTokenDomain->setOfficialAccountId($customer['officialAccountId']);
 
             // 生成token
             $build = $this->issuingTokenDomain->build($config, (string)$customer['id'], $customer['name']);
