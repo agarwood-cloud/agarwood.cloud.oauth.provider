@@ -101,6 +101,6 @@ class OAuthController extends AbstractBaseController
 
         return $this->wrapper()->setData(
             $this->application->customerSignupProvider($DTO)
-        )->response($response->withStatus(201));
+        )->response();
     }
 }
