@@ -18,9 +18,10 @@ interface CustomerRpcClient
     /**
      * Customer Service Login
      *
+     * @param int    $officialAccountId
      * @param string $username
      *
      * @return array
      */
-    public function login(string $username): array;
+    public function login(int $officialAccountId, string $username): array;
 }
