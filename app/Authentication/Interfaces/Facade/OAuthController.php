@@ -28,13 +28,11 @@ use Swoft\Validator\Annotation\Mapping\ValidateType;
 class OAuthController extends AbstractBaseController
 {
     /**
-     * 应用层
-     *
      * @\Swoft\Bean\Annotation\Mapping\Inject()
      *
-     * @var OAuthApplication
+     * @var \App\Authentication\Application\OAuthApplication
      */
-    protected OAuthApplication $application;
+    public OAuthApplication $application;
 
     /**
      * User Login
