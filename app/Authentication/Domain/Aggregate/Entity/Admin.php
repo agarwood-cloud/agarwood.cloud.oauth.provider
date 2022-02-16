@@ -27,6 +27,14 @@ class Admin extends Model
 {
     /**
      *
+     * @Column(name="enterprise_id", prop="enterpriseID")
+     *
+     * @var int
+     */
+    private int $enterpriseID = 0;
+
+    /**
+     *
      * @Column(name="created_at", prop="createdAt")
      *
      * @var string
@@ -247,5 +255,21 @@ class Admin extends Model
     public function setUsername(string $username): void
     {
         $this->username = $username;
+    }
+
+    /**
+     * @return int
+     */
+    public function getEnterpriseID(): int
+    {
+        return $this->enterpriseID;
+    }
+
+    /**
+     * @param int $enterpriseID
+     */
+    public function setEnterpriseID(int $enterpriseID): void
+    {
+        $this->enterpriseID = $enterpriseID;
     }
 }

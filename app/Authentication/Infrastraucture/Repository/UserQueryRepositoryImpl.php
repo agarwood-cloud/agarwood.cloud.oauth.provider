@@ -32,6 +32,7 @@ class UserQueryRepositoryImpl implements UserQueryRepository
         return DB::table(Admin::tableName())
             ->select(
                 'id',
+                'enterprise_id',
                 'username',
                 'phone',
                 'email',

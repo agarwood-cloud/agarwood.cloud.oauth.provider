@@ -50,6 +50,13 @@ class IssuingTokenDomainImpl implements IssuingTokenDomain
     public int $officialAccountId = 0;
 
     /**
+     * 企业
+     *
+     * @var int
+     */
+    public int $enterpriseId = 0;
+
+    /**
      * @return string
      */
     public function getCustomer(): string
@@ -192,7 +199,21 @@ class IssuingTokenDomainImpl implements IssuingTokenDomain
             $token->withClaim('officialAccountId', $this->getOfficialAccountId());
         }
 
+        if ($this->getEnterpriseId()) {
+            $token->withClaim('enterpriseId', $this->getEnterpriseId());
+        }
+
         // Builds a new token
         return $token->getToken($config->signer(), $config->signingKey());
+    }
+
+    public function setEnterpriseId(int $enterPriseId): void
+    {
+        $this->enterpriseId = $enterPriseId;
+    }
+
+    public function getEnterpriseId(): int
+    {
+        return $this->enterpriseId;
     }
 }

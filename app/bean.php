@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of Agarwood Cloud.
  *
@@ -24,23 +25,23 @@ return [
     // +------------------------------------------------------
     // | Load
     // +------------------------------------------------------
-    'lineFormatter'      => [
+    'lineFormatter'        => [
         'format'     => '%datetime% [%level_name%] [%channel%] [%event%] [tid:%tid%] [cid:%cid%] [traceid:%traceid%] [spanid:%spanid%] [parentid:%parentid%] %messages%',
         'dateFormat' => 'Y-m-d H:i:s',
     ],
-    'noticeHandler'      => [
+    'noticeHandler'        => [
         'class'     => FileHandler::class,
         'logFile'   => '@runtime/logs/notice-%d{Y-m-d}.log',
         'formatter' => \bean('lineFormatter'),
         'levels'    => 'error',
     ],
-    'applicationHandler' => [
+    'applicationHandler'   => [
         'class'     => FileHandler::class,
         'logFile'   => '@runtime/logs/error.log',
         'formatter' => \bean('lineFormatter'),
         'levels'    => 'error,warning',
     ],
-    'logger'             => [
+    'logger'               => [
         'flushRequest' => false,
         'enable'       => true,
         'handlers'     => [
@@ -85,6 +86,7 @@ return [
             'task_worker_num'       => env('HTTP_SERVER_TASK_WORKER_NUM', 12),
             'task_enable_coroutine' => true,
             'worker_num'            => env('HTTP_SERVER_WORKER_NUM', 6),
+            // 'admin_server'          => '0.0.0.0:9502' // start admin dashboard server
             // static handle
             // 'enable_static_handler'    => true,
             // 'document_root'            => dirname(__DIR__) . '/public',
@@ -311,7 +313,7 @@ return [
     // +------------------------------------------------------
     // |  RPC Service ------ oauth.center
     // +------------------------------------------------------
-    'user.center'      => [
+    'user.center'          => [
         'class'   => ServiceClient::class, // authorization
         'host'    => env('RPC_CLIENT_USER_CENTER_HOST', '127.0.0.1'),
         'port'    => env('RPC_CLIENT_USER_CENTER_PORT', 18307),
@@ -323,7 +325,7 @@ return [
         ],
         'packet'  => bean('rpcClientPacket')
     ],
-    'user.center.pool' => [
+    'user.center.pool'     => [
         'class'  => ServicePool::class,
         'client' => bean('user.center')
     ],

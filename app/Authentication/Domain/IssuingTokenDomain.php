@@ -60,6 +60,19 @@ interface IssuingTokenDomain
      */
     public function setOfficialAccountId(int $officialAccountId): void;
 
+
+    /**
+     * @param int $enterPriseId
+     *
+     * @return void
+     */
+    public function setEnterpriseId(int $enterPriseId): void;
+
+    /**
+     * @return int
+     */
+    public function getEnterpriseId(): int;
+
     /**
      * Issuing tokens
      *

@@ -50,13 +50,6 @@ class OAuthApplicationImpl implements OAuthApplication
     /**
      * @\Swoft\Bean\Annotation\Mapping\Inject()
      *
-     * @var \App\Authentication\Domain\ValidatingTokenDomain
-     */
-    public ValidatingTokenDomain $validatingTokenDomain;
-
-    /**
-     * @\Swoft\Bean\Annotation\Mapping\Inject()
-     *
      * @var \App\Authentication\Interfaces\Rpc\Client\CustomerRpcClient
      */
     public CustomerRpcClient $customerRpcClient;
@@ -81,6 +74,9 @@ class OAuthApplicationImpl implements OAuthApplication
 
             // 配置token
             $config = $this->configurationDomain->forSymmetricSigner();
+
+            // 设置企业id
+            $this->issuingTokenDomain->setEnterpriseId($user['enterprise_id']);
 
             // 生成token
             $build = $this->issuingTokenDomain->build($config, (string)$user['id'], $user['username']);
@@ -143,6 +139,7 @@ class OAuthApplicationImpl implements OAuthApplication
             $this->issuingTokenDomain->setCustomer($customer['account']);
             $this->issuingTokenDomain->setCustomerId($customer['id']);
             $this->issuingTokenDomain->setOfficialAccountId($customer['officialAccountId']);
+            $this->issuingTokenDomain->setEnterpriseId($customer['enterpriseId']);
 
             // 生成token
             $build = $this->issuingTokenDomain->build($config, (string)$customer['id'], $customer['name']);
