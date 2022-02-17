@@ -6,8 +6,8 @@ Currently only supports RBAC, but can be easily extended to support mainstream A
 
 ### Requirements
 
-- PHP 8.0
-- Swoole 8.4.1+
+- PHP 8.1
+- Swoole 8.4.6+
 - Composer
 
 ### Install
@@ -26,7 +26,7 @@ composer install
 ### Start
 
 ```shell
-php bin/swoft http:start
+php bin/agarwood http:start
 ```
 ### Contributors
 
