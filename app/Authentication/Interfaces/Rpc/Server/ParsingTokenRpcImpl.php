@@ -127,13 +127,13 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
      *
      * @return int|null
      */
-    public function getOfficialAccountId(?string $parse): int|null
+    public function getPlatformId(?string $parse): int|null
     {
         if (empty($parse)) {
             $parse = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));
         }
         $config = $this->configurationDomain->forSymmetricSigner();
 
-        return $this->parsingTokenDomain->getOfficialAccountId($config, $parse);
+        return $this->parsingTokenDomain->getPlatformId($config, $parse);
     }
 }

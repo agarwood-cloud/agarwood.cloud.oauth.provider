@@ -53,12 +53,12 @@ interface IssuingTokenDomain
     /**
      * @return int
      */
-    public function getOfficialAccountId(): int;
+    public function getPlatformId(): int;
 
     /**
-     * @param int $officialAccountId
+     * @param int $platformId
      */
-    public function setOfficialAccountId(int $officialAccountId): void;
+    public function setPlatformId(int $platformId): void;
 
 
     /**

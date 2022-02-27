@@ -47,7 +47,7 @@ class IssuingTokenDomainImpl implements IssuingTokenDomain
      *
      * @var int
      */
-    public int $officialAccountId = 0;
+    public int $platformId = 0;
 
     /**
      * 企业
@@ -107,17 +107,17 @@ class IssuingTokenDomainImpl implements IssuingTokenDomain
     /**
      * @return int
      */
-    public function getOfficialAccountId(): int
+    public function getPlatformId(): int
     {
-        return $this->officialAccountId;
+        return $this->platformId;
     }
 
     /**
-     * @param int $officialAccountId
+     * @param int $platformId
      */
-    public function setOfficialAccountId(int $officialAccountId): void
+    public function setPlatformId(int $platformId): void
     {
-        $this->officialAccountId = $officialAccountId;
+        $this->platformId = $platformId;
     }
 
     /**
@@ -195,8 +195,8 @@ class IssuingTokenDomainImpl implements IssuingTokenDomain
             $token->withClaim('customerId', $this->getNickname());
         }
 
-        if ($this->getOfficialAccountId()) {
-            $token->withClaim('officialAccountId', $this->getOfficialAccountId());
+        if ($this->getPlatformId()) {
+            $token->withClaim('platformId', $this->getPlatformId());
         }
 
         if ($this->getEnterpriseId()) {

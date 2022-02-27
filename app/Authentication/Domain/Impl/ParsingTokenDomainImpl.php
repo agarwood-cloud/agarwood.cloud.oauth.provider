@@ -81,10 +81,10 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
      *
      * @return int|null
      */
-    public function getOfficialAccountId(Configuration $config, string $parse): int|null
+    public function getPlatformId(Configuration $config, string $parse): int|null
     {
         $token = $config->parser()->parse($parse);
         assert($token instanceof UnencryptedToken);
-        return $token->claims()->get('officialAccountId');
+        return $token->claims()->get('platformId');
     }
 }

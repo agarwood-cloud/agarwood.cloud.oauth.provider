@@ -43,7 +43,7 @@ class SignupDTO
      *
      * @var int
      */
-    public int $officialAccountId = 0;
+    public int $platformId = 0;
 
     /**
      * @return string
@@ -80,16 +80,16 @@ class SignupDTO
     /**
      * @return int
      */
-    public function getOfficialAccountId(): int
+    public function getPlatformId(): int
     {
-        return $this->officialAccountId;
+        return $this->platformId;
     }
 
     /**
-     * @param int $officialAccountId
+     * @param int $platformId
      */
-    public function setOfficialAccountId(int $officialAccountId): void
+    public function setPlatformId(int $platformId): void
     {
-        $this->officialAccountId = $officialAccountId;
+        $this->platformId = $platformId;
     }
 }

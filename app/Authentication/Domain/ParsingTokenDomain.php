@@ -59,5 +59,5 @@ interface ParsingTokenDomain
      *
      * @return int|null
      */
-    public function getOfficialAccountId(Configuration $config, string $parse): int|null;
+    public function getPlatformId(Configuration $config, string $parse): int|null;
 }

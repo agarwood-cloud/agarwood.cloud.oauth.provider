@@ -127,7 +127,7 @@ class OAuthApplicationImpl implements OAuthApplication
     public function customerSignupProvider(SignupDTO $DTO): array
     {
         // customer service info
-        $customer = $this->customerRpcClient->login($DTO->getOfficialAccountId(), $DTO->getUsername());
+        $customer = $this->customerRpcClient->login($DTO->getPlatformId(), $DTO->getUsername());
 
         // 验证通过
         if ($customer && password_verify($DTO->getPassword(), $customer['password'])) {
@@ -138,7 +138,7 @@ class OAuthApplicationImpl implements OAuthApplication
             // 加入更多的参数
             $this->issuingTokenDomain->setCustomer($customer['account']);
             $this->issuingTokenDomain->setCustomerId($customer['id']);
-            $this->issuingTokenDomain->setOfficialAccountId($customer['officialAccountId']);
+            $this->issuingTokenDomain->setPlatformId($customer['platformId']);
             $this->issuingTokenDomain->setEnterpriseId($customer['enterpriseId']);
 
             // 生成token

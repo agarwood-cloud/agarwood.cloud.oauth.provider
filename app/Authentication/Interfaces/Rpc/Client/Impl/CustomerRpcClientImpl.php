@@ -29,13 +29,13 @@ class CustomerRpcClientImpl implements CustomerRpcClient
     /**
      * Customer Service Login
      *
-     * @param int    $officialAccountId
+     * @param int    $platformId
      * @param string $username
      *
      * @return array
      */
-    public function login(int $officialAccountId, string $username): array
+    public function login(int $platformId, string $username): array
     {
-        return $this->userCenterCustomerRpc->login($officialAccountId, $username);
+        return $this->userCenterCustomerRpc->login($platformId, $username);
     }
 }
