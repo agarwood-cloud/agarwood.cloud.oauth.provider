@@ -72,7 +72,8 @@
     "allow-plugins": {
       "composer/package-versions-deprecated": true,
       "yurunsoft/composer-include-files": true,
-      "yurunsoft/guzzle-swoole": true
+      "yurunsoft/guzzle-swoole": true,
+      "easywechat-composer/easywechat-composer": true
     }
   },
   "repositories": [
