@@ -7,7 +7,7 @@
 # ------------------------------------------------------------------------------------
 # @build-example docker build . -f Dockerfile -t agarwood/oauth:2.0
 #
-FROM phpswoole/swoole:4.8.6-php8.1
+FROM phpswoole/swoole:4.8.7-php8.1
 
 LABEL maintainer="676786620@qq.com>" version="2.0"
 
@@ -17,6 +17,8 @@ ENV APP_ENV=${app_env:-"test"} \
 
 # To install the Redis extension.
 RUN set -ex \
+    && apt-get update && apt-get install -y \
+    && apt-get install git -y \
     && pecl update-channels \
     && pecl install redis-stable \
     && docker-php-ext-enable redis \
@@ -29,8 +31,6 @@ RUN set -ex \
 # Clean apt cache
     && rm -rf /var/lib/apt/lists/*
 
-# Install composer && user Ali CDN
-
 # Timezone
 RUN cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
     && echo "${TIMEZONE}" > /etc/timezone \
@@ -41,6 +41,6 @@ ADD . /var/www/agarwood
 
 WORKDIR /var/www/agarwood
 
-#EXPOSE 18306 18307 18308
+EXPOSE 18306 18307 18308
 
-#CMD ["php", "/var/www/agarwood/bin/agarwood", "http:start"]
+CMD ["php", "/var/www/agarwood/bin/agarwood", "http:start"]
