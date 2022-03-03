@@ -11,9 +11,8 @@ FROM phpswoole/swoole:4.8.7-php8.1
 
 LABEL maintainer="676786620@qq.com>" version="2.0"
 
-# default APP_ENV = test
-ENV APP_ENV=${app_env:-"test"} \
-    TIMEZONE=${timezone:-"Asia/Shanghai"}
+# default TIMEZONE = Asia/Shanghai
+ENV TIMEZONE="Asia/Shanghai"
 
 # To install the Redis extension.
 RUN set -ex \

@@ -6,7 +6,6 @@ services:
     command: ['php', '/var/www/agarwood/bin/agarwood', 'http:start']
     container_name: agarwood-oauth
     environment:
-      - APP_ENV=dev
       - TIMEZONE=Asia/Shanghai
     restart: always
     env_file:

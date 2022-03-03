@@ -6,8 +6,8 @@ Currently only supports RBAC, but can be easily extended to support mainstream A
 
 ### Requirements
 
-- PHP 8.1
-- Swoole 8.4.6+
+- PHP 8.1+
+- Swoole 4.6.8+
 - Composer
 
 ### Install
