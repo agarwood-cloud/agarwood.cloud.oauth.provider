@@ -16,7 +16,6 @@ use App\Authentication\Application\OAuthApplication;
 use App\Authentication\Domain\ConfigurationDomain;
 use App\Authentication\Domain\IssuingTokenDomain;
 use App\Authentication\Domain\UserDomain;
-use App\Authentication\Domain\ValidatingTokenDomain;
 use App\Authentication\Interfaces\DTO\LoginDTO;
 use App\Authentication\Interfaces\DTO\SignupDTO;
 use App\Authentication\Interfaces\Rpc\Client\CustomerRpcClient;

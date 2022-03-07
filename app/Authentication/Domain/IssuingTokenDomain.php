@@ -60,7 +60,6 @@ interface IssuingTokenDomain
      */
     public function setPlatformId(int $platformId): void;
 
-
     /**
      * @param int $enterPriseId
      *

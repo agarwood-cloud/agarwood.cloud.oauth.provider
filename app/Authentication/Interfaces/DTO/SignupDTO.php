@@ -37,7 +37,6 @@ class SignupDTO
      */
     public string $password = '';
 
-
     /**
      * @\Swoft\Validator\Annotation\Mapping\IsInt()
      *

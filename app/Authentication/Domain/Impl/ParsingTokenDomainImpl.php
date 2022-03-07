@@ -87,4 +87,17 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
         assert($token instanceof UnencryptedToken);
         return $token->claims()->get('platformId');
     }
+
+    /**
+     * @param \Lcobucci\JWT\Configuration $config
+     * @param string                      $parse
+     *
+     * @return string|null
+     */
+    public function getEnterPriseId(Configuration $config, string $parse): string|null
+    {
+        $token = $config->parser()->parse($parse);
+        assert($token instanceof UnencryptedToken);
+        return $token->claims()->get('enterPriseId');
+    }
 }

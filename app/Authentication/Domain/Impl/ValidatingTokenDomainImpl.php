@@ -10,7 +10,6 @@
 
 namespace App\Authentication\Domain\Impl;
 
-use Agarwood\Core\Exception\ForbiddenException;
 use App\Authentication\Domain\Aggregate\Enum\IssuingToken;
 use App\Authentication\Domain\ValidatingTokenDomain;
 use Lcobucci\Clock\SystemClock;
