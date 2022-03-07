@@ -61,5 +61,5 @@ interface ParsingTokenDomain
      */
     public function getPlatformId(Configuration $config, string $parse): int|null;
 
-    public function getEnterPriseId(Configuration $config, array|string|null $parse): string|null;
+    public function getEnterPriseId(Configuration $config, string $parse): string|null;
 }
