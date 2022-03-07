@@ -61,5 +61,11 @@ interface ParsingTokenDomain
      */
     public function getPlatformId(Configuration $config, string $parse): int|null;
 
-    public function getEnterPriseId(Configuration $config, string $parse): string|null;
+    /**
+     * @param \Lcobucci\JWT\Configuration $config
+     * @param string                      $parse
+     *
+     * @return string|null
+     */
+    public function getEnterPriseId(Configuration $config, string $parse): int|null;
 }

@@ -94,7 +94,7 @@ class ParsingTokenDomainImpl implements ParsingTokenDomain
      *
      * @return string|null
      */
-    public function getEnterPriseId(Configuration $config, string $parse): string|null
+    public function getEnterPriseId(Configuration $config, string $parse): int|null
     {
         $token = $config->parser()->parse($parse);
         assert($token instanceof UnencryptedToken);
