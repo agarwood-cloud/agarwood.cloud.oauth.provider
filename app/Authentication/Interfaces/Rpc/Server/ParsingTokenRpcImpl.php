@@ -140,9 +140,9 @@ class ParsingTokenRpcImpl implements OAuthCenterJWTRpcInterface
     /**
      * @param string|null $parse
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getEnterPriseId(?string $parse): string|null
+    public function getEnterPriseId(?string $parse): int|null
     {
         if (empty($parse)) {
             $parse = str_replace('Bearer ', '', context()->getRequest()->getHeaderLine('Authorization'));

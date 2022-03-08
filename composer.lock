@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:agarwood-cloud/agarwood.cloud.core.provider.git",
-                "reference": "64724c0e9547f118c4500b9af1e89b86e0aaf795"
+                "reference": "e1676e31242de1ce9a781ee25668372bce38f861"
             },
             "require": {
                 "ext-json": "*",
@@ -22,7 +22,7 @@
                 "ext-redis": "*",
                 "ext-simplexml": "*",
                 "overtrue/wechat": "^5.16",
-                "php": ">=8.1",
+                "php": ">=8.0",
                 "swoft/db": "~2.0.0",
                 "swoft/framework": "~2.0.0",
                 "swoft/http-server": "~2.0.0",
@@ -72,7 +72,7 @@
             ],
             "description": "Agarwood-Cloud MicroService Business Core Code",
             "homepage": "https://github.com/agarwood-cloud/agarwood.cloud.core.provider.git",
-            "time": "2022-03-03T08:16:36+00:00"
+            "time": "2022-03-08T01:45:21+00:00"
         },
         {
             "name": "agarwood/rpc",
@@ -80,7 +80,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:agarwood-cloud/agarwood.cloud.rpc.provider.git",
-                "reference": "05a928bb9db4443d27324d2e28f612c86ce78524"
+                "reference": "d00bfdd2dd506350a403900ad4bd961de78198d2"
             },
             "require": {
                 "ext-json": "*",
@@ -89,7 +89,7 @@
                 "ext-pdo": "*",
                 "ext-redis": "*",
                 "ext-simplexml": "*",
-                "php": ">=8.1",
+                "php": ">=8.0",
                 "swoft/db": "~2.0.0",
                 "swoft/framework": "~2.0.0",
                 "swoft/http-server": "~2.0.0",
@@ -135,7 +135,7 @@
             ],
             "description": "agarwood-cloud Rpc Package",
             "homepage": "https://github.com/agarwood-cloud/agarwood.cloud.rpc.provider.git",
-            "time": "2022-03-06T10:36:21+00:00"
+            "time": "2022-03-08T01:40:17+00:00"
         },
         {
             "name": "casbin/casbin",
@@ -5879,16 +5879,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.6.0",
+            "version": "v3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "1975e4453eb2726d1f50da0ce7fa91295029a4fa"
+                "reference": "7705d5a985132a40282d18a176eb9a4a0497747c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/1975e4453eb2726d1f50da0ce7fa91295029a4fa",
-                "reference": "1975e4453eb2726d1f50da0ce7fa91295029a4fa",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/7705d5a985132a40282d18a176eb9a4a0497747c",
+                "reference": "7705d5a985132a40282d18a176eb9a4a0497747c",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5899,7 +5899,7 @@
             },
             "require": {
                 "composer/semver": "^3.2",
-                "composer/xdebug-handler": "^3.0",
+                "composer/xdebug-handler": "^3.0.3",
                 "doctrine/annotations": "^1.13",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
@@ -5911,8 +5911,8 @@
                 "symfony/finder": "^5.4 || ^6.0",
                 "symfony/options-resolver": "^5.4 || ^6.0",
                 "symfony/polyfill-mbstring": "^1.23",
-                "symfony/polyfill-php80": "^1.23",
-                "symfony/polyfill-php81": "^1.23",
+                "symfony/polyfill-php80": "^1.25",
+                "symfony/polyfill-php81": "^1.25",
                 "symfony/process": "^5.4 || ^6.0",
                 "symfony/stopwatch": "^5.4 || ^6.0"
             },
@@ -5962,7 +5962,7 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues",
-                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v3.6.0"
+                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v3.7.0"
             },
             "funding": [
                 {
@@ -5970,7 +5970,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-07T18:02:40+00:00"
+            "time": "2022-03-07T16:59:59+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -6471,16 +6471,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.14",
+            "version": "9.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4"
+                "reference": "2e9da11878c4202f97915c1cb4bb1ca318a63f5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9f4d60b6afe5546421462b76cd4e633ebc364ab4",
-                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/2e9da11878c4202f97915c1cb4bb1ca318a63f5f",
+                "reference": "2e9da11878c4202f97915c1cb4bb1ca318a63f5f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -6542,7 +6542,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.14"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.15"
             },
             "funding": [
                 {
@@ -6550,7 +6550,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-28T12:38:02+00:00"
+            "time": "2022-03-07T09:28:20+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",

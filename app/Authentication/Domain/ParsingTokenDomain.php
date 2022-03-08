@@ -65,7 +65,7 @@ interface ParsingTokenDomain
      * @param \Lcobucci\JWT\Configuration $config
      * @param string                      $parse
      *
-     * @return string|null
+     * @return int|null
      */
     public function getEnterPriseId(Configuration $config, string $parse): int|null;
 }
