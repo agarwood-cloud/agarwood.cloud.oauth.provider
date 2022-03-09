@@ -6,9 +6,9 @@ OAuth 是 Agarwood 的一部分，为Agarwood提供强大的、高效的开源�
 
 ### 环境要求
 
-- PHP 8.1
+- PHP 8.0+
 - Swoole 4.8.6+
-- Composer
+- Composer 2.0+
 
 ### 安装
 
